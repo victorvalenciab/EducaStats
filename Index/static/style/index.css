@@ -9,7 +9,7 @@
 body{
     margin: 0%;
     padding: 0%;
-    background: var(--Background);
+    background: black;
     color: var(--Text_color);
 }
 /*ENCABEZADO*/
@@ -21,7 +21,7 @@ header{
     font-family: var(--Font_Text_h1);
     font-size: 20px;
     text-align: center;
-   
+    /*border: 2px solid black;*/
 }
 
 .Encabezado nav{
