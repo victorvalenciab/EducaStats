@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <!-- Este es un comentario en HTML. -->
-    <!-- <link rel="stylesheet" href="{% static 'style/index.css' %}">-->
+    <link rel="stylesheet" href="{% static 'style/index.css' %}">
 </head>
 <body>
 
     <header class="Encabezado">
-        <div class="link_login">
-            <img src="{% static 'user_login.png'%}" alt="login">
-            <a href="{% url 'login' %}">Iniciar sesion</a>  
-        </div>
-        
+      
         <nav class="navegacion"> 
 
             <div class="Logo">
@@ -29,6 +25,10 @@
                 <li><a href="#que-somos">¿Qué somos?</a></li>
             </ul>
 
+            <div class="link_login">
+                <img src="{% static 'user_login.png'%}" alt="login">
+                <a href="{% url 'login' %}" class="iniciar_sesion">Iniciar sesion</a>  
+            </div>
         </nav>   
 
     </header>
