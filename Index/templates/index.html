@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <!-- Este es un comentario en HTML. -->
+    <!-- <link rel="stylesheet" href="{% static 'style/index.css' %}">-->
 </head>
 <body>
 
-    <div class="Encabezado">
-        <img src="{% static 'icon.png' %}" alt="my imagen">
-        <h1>{{title}}</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#inicio">Inicio</a>
-                </li>
-                <li>
-                    <a href="#que-ofrecemos">¿Qué ofrecemos?</a>
-                </li>
-                <li>                    
-                    <a href="#que-somos">¿Qué somos?</a>
-                </li>
-            </ul>
-        </nav>
-        <a href="{% url 'login' %}">login</a>    
-    </div>
+    <header class="Encabezado">
+        <div class="link_login">
+            <img src="{% static 'user_login.png'%}" alt="login">
+            <a href="{% url 'login' %}">Iniciar sesion</a>  
+        </div>
+        
+        <nav class="navegacion"> 
 
+            <div class="Logo">
+                <img src="{% static 'icon.png' %}" alt="my imagen" class="icon">        
+                <h1>{{title}}</h1>
+            </div>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#que-ofrecemos">¿Qué ofrecemos?</a></li>
+                <li><a href="#que-somos">¿Qué somos?</a></li>
+            </ul>
+
+        </nav>   
+
+    </header>
+    
     <div class="Cuerpo">
 
         <div id="inicio">

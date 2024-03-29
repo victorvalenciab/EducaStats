@@ -1,0 +1,64 @@
+:root{
+    --Background_color: #252440;
+    --Background_header: #2C3869;
+    --Text_color: #ffff;
+    --Text_color_links:#ffff;
+
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: var(--Background_color);
+    color: var(--Text_color);
+}
+/*ENCABEZADO*/
+header{
+    margin: 30px;
+   
+}
+.Encabezado nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 5px;
+    font-weight: bold;
+    padding: 0;
+  
+}
+h1{
+    color: var(--Text_color);
+    font-size: 50px;
+    padding: 0;
+    
+}
+.navegacion ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.link_login{
+    margin-top: 20px;
+    padding-top: 0;
+   
+    text-align: right;
+}
+.Logo{
+    display: flex;
+}
+.icon{
+    width: 100px;
+    height: 100px;  
+}
+a{
+    color: var(--Text_color_links);
+    text-decoration: none;
+}
+
+
+
+
+/*CUERPO*/
+.Cuerpo{
+    margin: 30px;
+}

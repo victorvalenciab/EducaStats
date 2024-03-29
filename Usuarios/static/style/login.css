@@ -1,0 +1,57 @@
+:root{
+    --Background:                                                                 background: -webkit-linear-gradient(90deg, #2d2c55,#302c9b,#2c3869);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #2d2c55,#302c9b,#2c3869);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+    --Background_:#302C9B;
+    --Color_text: #fff                                     
+}
+body{
+    background: var(--Background);
+    color: var(--Color_text); 
+}
+.padre{
+    margin: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.hijo{
+    padding: 50px;
+    border: 2px solid black;
+    border-radius: 30px;
+    /*background: var(--Background_);*/
+}
+a{
+    color: var(--Color_text);
+    text-decoration: none;
+}
+
+h1{
+    font-size: 50px;
+    margin-top: 0;
+    margin: 10px;
+    text-align: center;
+}
+
+/*FORMS*/
+.forms{
+    padding-top: 20px;
+}
+button{
+    cursor: pointer;
+}
+input{
+    font-size: 20px;
+    border: none;
+    margin: 10px;
+    border-bottom: 2px solid white;
+    background: var(--Background);
+}
+input:focus{
+    outline: none;
+}
+/*CHECKBOX*/
+.forms_SeePassword{
+    cursor: pointer;
+}
