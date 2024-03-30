@@ -1,17 +1,22 @@
 :root{
     --Background: #252440;
-    --Background_header: #403f70;
+    --Background_header: #5A56AC;
     --Text_color: #ffff;
     --Font_Text_h1: 'Roboto', sans-serif;
     --Text_color_links:#ffff;
-
+    --Hover_nav : #99A2E0;
 }
 body{
     margin: 0%;
     padding: 0%;
-    background: black;
+    background: var(--Background);
     color: var(--Text_color);
 }
+a{
+    color: var(--Text_color_links);
+    text-decoration: none;
+}
+
 /*ENCABEZADO*/
 header{
     padding-top: 50px;
@@ -21,7 +26,6 @@ header{
     font-family: var(--Font_Text_h1);
     font-size: 20px;
     text-align: center;
-    /*border: 2px solid black;*/
 }
 
 .Encabezado nav{
@@ -33,41 +37,52 @@ header{
     padding-left: 30px;
     padding-right: 5px;
     font-weight: bold;
+    border-radius: 20px;
 }
 .navegacion ul{
     list-style-type: none;
     margin-bottom: 0;
-  
 }
 .navegacion ul li{
     display: inline-block;
     padding: 0px 20px;
+    border-radius: 20px;
+}
+.navegacion a{
+    font-size: 70%;
+}
+.navegacion ul li:hover{
+    background-color: var(--Hover_nav);
 }
 .Logo{
     display: flex;
     align-items: center; /* Alinea verticalmente */
+    
 }
 h1, .icon{
     margin: 0;
 }
 h1{
     color: var(--Text_color);
-    font-size: 50px;
+    font-size: 40px;
     padding: 0;
     margin-right: 10px;
 }
 .icon{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     display: flex;
 }
-a{
-    color: var(--Text_color_links);
-    text-decoration: none;
+.icoLogin .iniciar_sesion{
+    margin: 0;
+}
+.icoLogin{
+    display: flex;
 }
 .link_login a{
     font-size: 70%;
 }
+
 
 /*CUEPRO*/
 .Cuerpo{

@@ -15,9 +15,18 @@
 
             <h1>{{title}}</h1>
 
-            <form class="forms">
-                {{form_login}}
+            <form class="forms" method="post">
 
+                <label for="Username_Login">Usuarios</label>
+                {{form_login.Username_Login}}
+                {{form_login.Username_Login.errors}}
+
+                <label for="Password_Login">Contarseña</label>
+                {{form_login.Password_Login}}
+                {{form_login.Password_Login.errors}}
+
+                <label for="">Ver contraseña</label>
+                {{form_login.SeePassword}}
                 <button>
                     Acceder
                 </button>
