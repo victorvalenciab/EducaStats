@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title_login}}</title>
-    <!-- <link rel="stylesheet" href="{% static 'style/login.css' %}">-->
+    <!--<link rel="stylesheet" href="{% static 'style/login.css' %}">-->
 </head>
 <body>
     <a href="{% url 'index' %}">Inicio</a>
@@ -17,17 +17,26 @@
 
             <form class="forms" method="post">
 
-                <label for="Username_Login">Usuarios</label>
-                {{form_login.Username_Login}}
-                {{form_login.Username_Login.errors}}
+                <div class="class">
+                    <label for="Username_Login">Usuario</label>
+                    <img src="https://cdn.hugeicons.com/icons/user-stroke-rounded.svg" alt="user" width="24" height="24" />
+                    {{form_login.Username_Login}}
+                    {{form_login.Username_Login.errors}}
+                </div>
 
-                <label for="Password_Login">Contarseña</label>
-                {{form_login.Password_Login}}
-                {{form_login.Password_Login.errors}}
+                <div class="class">
+                    <label for="Password_Login">Contarseña</label>
+                    <img src="https://cdn.hugeicons.com/icons/user-lock-01-stroke-rounded.svg" alt="user-lock-01" width="24" height="24" />
+                    {{form_login.Password_Login}}
+                    {{form_login.Password_Login.errors}}
+                </div>
+                
+                <div class="class">
+                    <label for="">Ver contraseña</label>
+                    {{form_login.SeePassword}}
+                </div>
 
-                <label for="">Ver contraseña</label>
-                {{form_login.SeePassword}}
-                <button>
+                <button class="button">
                     Acceder
                 </button>
 
