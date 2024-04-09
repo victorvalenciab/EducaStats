@@ -1,14 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title_login}}</title>
-    <!--<link rel="stylesheet" href="{% static 'style/login.css' %}">-->
-</head>
-<body>
-    <a href="{% url 'index' %}">Inicio</a>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<title>{{title_login}}</title>
+<a href="{% url 'index' %}">Inicio</a>
     <div class="padre">
         
         <div class="hijo">
@@ -47,7 +42,6 @@
             <p>¿No tienes una cuenta?<a href="{% url 'create' %}"> Registrate</a></p>    
         </div>
     </div>
+
     
-    
-</body>
-</html>
+{% endblock %}
