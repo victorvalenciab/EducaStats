@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import _Login, _Create, _RestorePassword, _PasswordChanged
+from .forms import _Login, _Register, _RestorePassword, _PasswordChanged
 
 # Create your views here.
 title = 'EducaStats'
@@ -16,7 +16,7 @@ def Create(request):
     return render(request, 'createAc.html',{
         'title': title,
         'title_crear': title_crear,
-        'form_create': _Create
+        'form_register': _Register
     })
     
 def RestorePassword(request):

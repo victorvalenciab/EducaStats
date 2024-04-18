@@ -9,11 +9,11 @@ class _Login(forms.Form):
     Password_Login = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput(attrs={'class':'forms_Password'}))
     SeePassword = forms.BooleanField(label="Ver contraseña", widget=forms.CheckboxInput(attrs={'class':'forms_SeePassword'}))
     
-class _Create(forms.Form):
-    gmail_Create = forms.EmailField(label="Correo electrónico", max_length=50)
-    Name_Create = forms.CharField(label="Nombre completo", max_length=20)
-    Password_Create = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput)
-    Password_Confirm = forms.CharField(label="Confirmar contraseña", max_length=20, widget=forms.PasswordInput)
+class _Register(forms.Form):
+    gmail_Register = forms.EmailField(label="Correo electrónico", max_length=50)
+    Name_Register = forms.CharField(label="Nombre completo", max_length=20)
+    Password_Register = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput)
+    Password_RegisterConfirm = forms.CharField(label="Confirmar contraseña", max_length=20, widget=forms.PasswordInput)
 
 class _RestorePassword(forms.Form):
     gmail_Restore = forms.EmailField(label="Correo electrónico", max_length=50)

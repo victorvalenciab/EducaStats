@@ -1,0 +1,167 @@
+:root{
+    --Background : #252440;
+    --Background_:#302C9B;
+    --Color_text: #ffff;    
+    --White:#ffff;
+    --Decoration : #162938;
+    --Color_a: #8084d4;
+    --BTN:#49478c;                            
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--Background);
+    color: var(--Color_text);
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--BTN);
+    font-size: 2em;
+    color: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--White); /*Linea inferior del input*/
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: var(--Color_text);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label, /*Controla la aniamcion del label contenido*/
+.input-box input:valid~label {
+    top: -5px;
+    /* color: chocolate; */
+    font-size: 1em;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--Color_text);
+    font-weight: 600;
+}
+
+.input-box .icon { /*Control del icono de los input*/
+    position: absolute;
+    right: 8px;
+    font-size: 1.5em;
+    color: var(--White);
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 1em;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input { /*Controla el diseño del checbox*/
+    accent-color: var(--Decoration);
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.remember-forgot a {
+    color: var(--Color_a);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: var(--BTN);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--Color_text);
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: 1em;
+    color: var(--Color_text);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: var(--Color_a);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}

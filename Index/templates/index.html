@@ -13,9 +13,11 @@
     <script type="text/javascript" src="../static/js/pagina.js"></script>
 
     <header>
-
-        <img src="{% static '/img/icon.png' %}" alt="my imagen" class="icon">        
-        <h1 class="Logo">{{title}}</h1>
+        <div class="LogoHeader">
+            <img src="{% static '/img/icon.png' %}" alt="my imagen" class="icon">        
+            <h1 class="Logo">{{title}}</h1>
+        </div>
+        
 
         <nav class="navegation"> 
 
@@ -23,9 +25,8 @@
             <a href="#que-ofrecemos">¿Qué ofrecemos?</a></li>
             <a href="#que-somos">¿Qué somos?</a></li>
 
-             <button class="btnLogin-popup" id="Login"> 
-                Iniciar sesion
-               <!-- <a href="{% url 'login' %}"></a>   -->
+             <button class="btnLogin-popup" id="Login">   
+               <a href="{% url 'login' %}">Iniciar sesion</a>  
             </button> 
         </nav>   
 

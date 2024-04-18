@@ -83,10 +83,18 @@ header {
 }
 .btnLogin-popup a {
     right: 20px;
+    font-size: 15px;
 
+}
+
+.LogoHeader {
+    display: flex;
+    align-items: center; /* Para centrar verticalmente si lo deseas */
 }
 .icon {
     width: 150px;
     height: 150px;
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el título */
 }
 
