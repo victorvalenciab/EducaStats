@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title_crear}}</title>
-</head>
-<body>
-    <div class="continer">
-        <h1>{{title}}</h1>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <!-- <h1>{{title}}</h1>
+
+    <div class="">
+        <span class=""><ion-icon name="person"></ion-icon></span>
+        {{form_register.gmail_Register}}
+        <label for="gmail_Register">Usuario</label>
+    </div>
+
+    <!-- <div class="continer">
+        
         <form action="">
             {{form_create}}
             <button>
                 Crear
             </button>
         </form>
-    </div>
-    <p>¿Tienes una cuenta?<a href="{% url 'login' %}">Inicia sesión</a></p>
-</body>
-</html>
+    </div> 
+    <p>¿Tienes una cuenta?<a href="{% url 'login' %}">Inicia sesión</a></p> -->
+
+{% endblock %}

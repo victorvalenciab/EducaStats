@@ -13,7 +13,7 @@ def Login(request):
     
 def Create(request):
     title_crear = 'Crear cuenta'
-    return render(request, 'createAc.html',{
+    return render(request, 'register.html',{
         'title': title,
         'title_crear': title_crear,
         'form_register': _Register
