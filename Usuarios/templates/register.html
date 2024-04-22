@@ -7,44 +7,44 @@
         <div class="form-box">
             <h1>{{title}}</h1>
 
-            <form class="forms" action="/registerUser" method="POST">
+            <form class="forms" action="" method="POST"> {% csrf_token %}
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     {% csrf_token %}
-                    {{ form_register.gmail_Register }}
+                    {{ newUSer.gmail_Register }}
                     <label for="gmail_Register">Gmail</label>
                 </div>
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     {% csrf_token %}
-                    {{ form_register.Name_Register }}
-                    {{ form_register.Name_Register.errors }}
+                    {{ newUSer.Name_Register }}
+                    {{ newUSer.Name_Register.errors }}
                     <label for="Name_Register">Usuario</label>
                 </div>
 
                 <div class="input-conbobox">
                     <label for="Rol_Register">Rol</label>
                     {% csrf_token %}
-                    {{ form_register.Rol_Register }}
-                    {{ form_register.Rol_Register.errors }}
+                    {{ newUSer.Rol_Register }}
+                    {{ newUSer.Rol_Register.errors }}
                     
                 </div>
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     {% csrf_token %}
-                    {{ form_register.Password_Register }}
-                    {{ form_register.Password_Register.errors }}
+                    {{ newUSer.Password_Register }}
+                    {{ newUSer.Password_Register.errors }}
                     <label for="Password_Register">Contraseña</label>
                 </div>
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     {% csrf_token %}
-                    {{ form_register.Password_RegisterConfirm }}
-                    {{ form_register.Password_RegisterConfirm.errors }}
+                    {{ newUSer.Password_RegisterConfirm }}
+                    {{ newUSer.Password_RegisterConfirm.errors }}
                     <label for="Password_RegisterConfirm">Confirmar Contraseña</label>
                 </div>
             

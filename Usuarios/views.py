@@ -12,26 +12,46 @@ def Login(request):
         'form_login': _Login
     })
     
-def Register(request):
+    
+def Register(request): 
     title_crear = 'Crear cuenta'
-    if request.method == 'GET':
-        return render(request, 'register.html',{
+    if request.method == 'POST':
+       newUSer = _Register(request.POST)
+       if newUSer.is_valid():
+           Email = newUSer.cleaned_data['gmail_Register']
+           Username = newUSer.cleaned_data['Name_Register']
+           Rol = newUSer.cleaned_data['Rol_Register']
+           Password = newUSer.cleaned_data['Password_Register']
+           PasswordChange = newUSer.cleaned_data['Password_RegisterConfirm']
+           return redirect('login')
+    else:
+       newUSer = _Register()
+    return render(request, 'register.html',{
+        'newUSer': newUSer,
         'title': title,
         'title_crear': title_crear,
-        'form_register': _Register
-        })
-# def Register(request):
-#     if request.method == 'POST':
-#         form = _Register(request.POST)
-#         if form.is_valid():
-#             # Crea una instancia del modelo con los datos del formulario
-#             register = form.save(commit=False)
-#             # Realiza cualquier otra lógica adicional si es necesario
-#             Register.save()  # Guarda la instancia en la base de datos
-#             return redirect('login.html')  # Redirige a la URL de éxito
-#     else:
-#         form = _Register()
-#     return render(request, 'register.html', {'form': form})
+        # 'form_register': _Register
+    })
+
+
+# def registerUser(request):
+#     gmail_Register= request.POST['gmail_Register']
+#     Name_Register= request.POST['Name_Register']
+#     Rol_Register= request.POST['Rol_Register']
+#     Password_Register= request.POST['Password_Register']
+#     Password_RegisterConfirm= request.POST['Password_RegisterConfirm']
+
+#     register = _Register(
+#         Email= gmail_Register,
+#         Username= Name_Register,
+#         Rol= Rol_Register,
+#         Password= Password_Register,
+#         PasswordChange= Password_RegisterConfirm
+#     )
+#     register.save()
+#     return redirect('/')
+        
+
     
 
 def RestorePassword(request):
