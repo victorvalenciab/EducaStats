@@ -1,4 +1,12 @@
 from django import forms
+from .models import Register
+
+OPCIONES_REGISTR = [
+    ("administrador", "Administrador"),
+    ("profesor", "Profesor"),
+    ("estudiante", "Estudiante"),
+]
+
 
 class _AdminForm(forms.Form):
     Username = forms.CharField(max_length=20)
@@ -12,6 +20,7 @@ class _Login(forms.Form):
 class _Register(forms.Form):
     gmail_Register = forms.EmailField(label="Correo electrónico", max_length=50)
     Name_Register = forms.CharField(label="Nombre completo", max_length=20)
+    Rol_Register = forms.ChoiceField(label="Rol", choices=OPCIONES_REGISTR, widget=forms.Select())
     Password_Register = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput)
     Password_RegisterConfirm = forms.CharField(label="Confirmar contraseña", max_length=20, widget=forms.PasswordInput)
 

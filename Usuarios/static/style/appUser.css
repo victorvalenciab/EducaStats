@@ -39,12 +39,49 @@ body {
 
 }
 
+.wrapper-register {
+    position: relative;
+    width: 400px;
+    height: 640px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
 }
 
 .wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--BTN);
+    font-size: 2em;
+    color: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper-register .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper-register .icon-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -72,6 +109,35 @@ body {
     height: 50px;
     border-bottom: 2px solid var(--White); /*Linea inferior del input*/
     margin: 30px 0;
+}
+
+.input-conbobox {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.input-conbobox label {
+    top: 50%;
+    left: 5px;
+    margin-right: 10px; 
+    font-size: 1.5em;
+    order: 1; /* Aparece después del label */
+}
+
+.input-conbobox select {
+    order: 2; /* Aparece después del label */
+    /* Estilos específicos para el combobox */
+    padding: 5px; /* Espaciado interno */
+    border: 1px solid var(--Decoration); /* Borde */
+    border-radius: 3px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    cursor: pointer;
+}
+
+.input-conbobox select:focus {
+    /* Estilos adicionales cuando el combobox está enfocado */
+    outline: none; /* Quita el contorno al enfocar */
+    border-color: var(--BTN); /* Cambia el color del borde */
 }
 
 .input-box label {
@@ -103,6 +169,7 @@ body {
     color: var(--Color_text);
     font-weight: 600;
 }
+
 
 .input-box .icon { /*Control del icono de los input*/
     position: absolute;
@@ -165,3 +232,4 @@ body {
 .login-register p a:hover {
     text-decoration: underline;
 }
+

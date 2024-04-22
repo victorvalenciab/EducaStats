@@ -2,23 +2,71 @@
 
 {% block content %}
 
-    <!-- <h1>{{title}}</h1>
+    <div class="wrapper-register">
+        <a href="{% url 'index' %}" class="icon-close"><ion-icon name="close"></ion-icon></a>
+        <div class="form-box">
+            <h1>{{title}}</h1>
 
-    <div class="">
-        <span class=""><ion-icon name="person"></ion-icon></span>
-        {{form_register.gmail_Register}}
-        <label for="gmail_Register">Usuario</label>
+            <form class="forms" action="/registerUser" method="POST">
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    {% csrf_token %}
+                    {{ form_register.gmail_Register }}
+                    <label for="gmail_Register">Gmail</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    {% csrf_token %}
+                    {{ form_register.Name_Register }}
+                    {{ form_register.Name_Register.errors }}
+                    <label for="Name_Register">Usuario</label>
+                </div>
+
+                <div class="input-conbobox">
+                    <label for="Rol_Register">Rol</label>
+                    {% csrf_token %}
+                    {{ form_register.Rol_Register }}
+                    {{ form_register.Rol_Register.errors }}
+                    
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    {% csrf_token %}
+                    {{ form_register.Password_Register }}
+                    {{ form_register.Password_Register.errors }}
+                    <label for="Password_Register">Contraseña</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    {% csrf_token %}
+                    {{ form_register.Password_RegisterConfirm }}
+                    {{ form_register.Password_RegisterConfirm.errors }}
+                    <label for="Password_RegisterConfirm">Confirmar Contraseña</label>
+                </div>
+            
+
+                <div class="remember-forgot">
+                    <label for="">
+                        <input type="checkbox"> Acepto terminos y condiciones</input>
+                    </label>
+                </div>
+
+                <button class="btn">
+                    Crear
+                </button>
+
+                <div class="login-register">
+                    <p>¿Tienes una cuenta?<a href="{% url 'login' %}"> Inicia sesión</a></p> 
+                </div>
+                
+            </form>
+        </div>
     </div>
-
-    <!-- <div class="continer">
-        
-        <form action="">
-            {{form_create}}
-            <button>
-                Crear
-            </button>
-        </form>
-    </div> 
-    <p>¿Tienes una cuenta?<a href="{% url 'login' %}">Inicia sesión</a></p> -->
+   
+    
 
 {% endblock %}

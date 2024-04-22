@@ -6,11 +6,13 @@
     --Text_color_links:#ffff;
     --Hover_nav : #99A2E0;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -98,3 +100,15 @@ header {
     margin-right: 10px; /* Espacio entre la imagen y el título */
 }
 
+
+/*CUEPOR*/
+
+.Cuerpo {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+}
+
+/*ACTUAL*/
