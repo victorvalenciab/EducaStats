@@ -1,6 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import _Login, _Register, _RestorePassword, _PasswordChanged
+from django.db import transaction
 
 # Create your views here.
 title = 'EducaStats'
@@ -13,25 +13,29 @@ def Login(request):
     })
     
     
-def Register(request): 
-    title_crear = 'Crear cuenta'
-    if request.method == 'POST':
-       newUSer = _Register(request.POST)
-       if newUSer.is_valid():
-           Email = newUSer.cleaned_data['gmail_Register']
-           Username = newUSer.cleaned_data['Name_Register']
-           Rol = newUSer.cleaned_data['Rol_Register']
-           Password = newUSer.cleaned_data['Password_Register']
-           PasswordChange = newUSer.cleaned_data['Password_RegisterConfirm']
-           return redirect('login')
-    else:
-       newUSer = _Register()
-    return render(request, 'register.html',{
-        'newUSer': newUSer,
-        'title': title,
-        'title_crear': title_crear,
-        # 'form_register': _Register
-    })
+# @transaction.atomic
+# def Register(request): 
+#     title_crear = 'Crear cuenta'
+#     if request.method == 'POST':
+#         newUSer = _Register(request.POST)
+#         if newUSer.is_valid():
+#             Email = newUSer.cleaned_data['gmail_Register']
+#             Username = newUSer.cleaned_data['Name_Register']
+#             Rol = newUSer.cleaned_data['Rol_Register']
+#             Password = newUSer.cleaned_data['Password_Register']
+#             PasswordChange = newUSer.cleaned_data['Password_RegisterConfirm']
+#             # Realiza aquí tus operaciones de escritura en la base de datos
+#             # Por ejemplo:
+#             nuevo_usuario = _Register(email=Email, username=Username, rol=Rol, password=Password, passwordChange=PasswordChange)
+#             nuevo_usuario.save()
+#             return redirect('login')
+#     else:
+#         newUSer = _Register()
+#     return render(request, 'register.html', {
+#         'newUSer': newUSer,
+#         'title': title,
+#         'title_crear': title_crear,
+#     })
 
 
 # def registerUser(request):

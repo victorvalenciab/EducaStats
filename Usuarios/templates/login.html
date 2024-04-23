@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load static %}
+
 <title>{{title_login}}</title>
 
 <!-- <a href="{% url 'index' %}">Inicio</a> -->
@@ -40,10 +42,10 @@
             </div>
 
             <button type="submit" class="btn">
-                Acceder
+                <a href="{% url 'pollo' %}"></a>Acceder</a>
             </button>
             <div class="login-register">
-                <p>¿No tienes una cuenta?<a clas="register-link" href="{% url 'register' %}"> Registrate</a></p>  
+                 
             </div>
 
         </form>
