@@ -16,37 +16,53 @@
 
         <h1>{{title}}</h1>
 
-        <form class="forms" method="post">
-
+        <form class="forms" method="post"> {% csrf_token %}
             <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" name="Username_Login" id="Username_Login" required>
+                <label for="Username_Login">Usuario</label>     
+            </div>
+            <!-- <div class="input-box">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
                 {{form_login.Username_Login}}
                 {{form_login.Username_Login.errors}}
                 <label for="Username_Login">Usuario</label>     
-            </div>
+            </div> -->
 
             <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="Password_Login" id="Password_Login" required>
+                <label for="Password_Login">Contarseña</label>
+            </div>
+            <!-- <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 {{form_login.Password_Login}}
                 {{form_login.Password_Login.errors}}
                 <label for="Password_Login">Contarseña</label>
-            </div>
-            
+            </div> -->
             <div class="remember-forgot">              
+                <label for="">
+                    <input type="checkbox" name="SeePassword" id="SeePassword">
+                    Ver contraseña
+                </label>    
+                <a href="{% url 'restorePassword' %}">¿Olvidaste tu contraseña?</a>
+            </div>
+            <!-- <div class="remember-forgot">              
                 <label for="">
                     {{form_login.SeePassword}}
                     {{form_login.SeePassword.errors}}
                     Ver contraseña
                 </label>    
                 <a href="{% url 'restorePassword' %}">¿Olvidaste tu contraseña?</a>
-            </div>
+            </div> -->
 
             <button type="submit" class="btn">
-                <a href="{% url 'pollo' %}"></a>Acceder</a>
+                <a href="{% url 'myapp' %}"></a>Acceder</a>
             </button>
             <div class="login-register">
                  
             </div>
+            
 
         </form>
     </div>
