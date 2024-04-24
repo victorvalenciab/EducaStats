@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import _Login, _Register, _RestorePassword, _PasswordChanged
 from django.db import transaction
+from .models import Usuarios
 
 # Create your views here.
 title = 'EducaStats'
@@ -12,7 +13,14 @@ def Login(request):
         'form_login': _Login
     })
     
-    
+
+def Users(request):
+   Username = request.POST['Username']
+   Password = request.POST['Username']
+   User = Usuarios(Username_Login = Username, Password_Login = Password)
+   User.save();
+   return redirect('my_app')
+
 # @transaction.atomic
 # def Register(request): 
 #     title_crear = 'Crear cuenta'

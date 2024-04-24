@@ -20,3 +20,10 @@ class Register(models.Model):
     
     def __str__(self):
         return self.Username
+    
+class Usuarios(models.Model):
+    Username = models.CharField(max_length=20)
+    Password = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.Username
