@@ -1,19 +1,55 @@
 from django.shortcuts import render, redirect
 from .forms import _Login, _Register, _RestorePassword, _PasswordChanged
-from django.db import transaction
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 from .models import Usuarios
 
+
 # Create your views here.
+
 title = 'EducaStats'
+@login_required
 def Login(request):
     title_login = 'Inicair sesión'
-    return render(request, 'login.html',{
-        'title': title,
-        'title_login': title_login,
-        'form_login': _Login
-    })
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
+            login(request, user)
+            return redirect('my_app_view')  # Redirige a la vista de my_app.html
+        else:
+            # Manejar el error de autenticación
+            return render(request, 'login.html', {
+                'error': 'Credenciales inválidas',
+                'title': title,
+                'title_login': title_login,
+                'form_login': _Login                
+                })
+    else:
+        return render(request, 'login.html',{
+            'title': title,
+            'title_login': title_login,
+            'form_login': _Login
+        })
+ 
     
-
+    
+# def login_view(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('my_app.html')  # Redirige a la vista de my_app.html
+#         else:
+#             # Manejar el error de autenticación
+#             return render(request, 'login.html', {'error': 'Credenciales inválidas'})
+#     else:
+#         return render(request, 'login.html')
+    
 def Users(request):
    Username = request.POST['Username']
    Password = request.POST['Username']

@@ -15,7 +15,6 @@ class _AdminForm(forms.Form):
 class _Login(forms.Form):
     Username_Login = forms.CharField(label="Usuario", max_length=20, widget=forms.TextInput(attrs={'class':'forms_Usuario'}))
     Password_Login = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput(attrs={'class':'forms_Password'}))
-    SeePassword = forms.BooleanField(label="Ver contraseña", widget=forms.CheckboxInput(attrs={'class':'forms_SeePassword'}))
     
 class _Register(forms.Form):
     gmail_Register = forms.EmailField(label="Correo electrónico", max_length=50, widget=forms.EmailInput(attrs={'class':'forms_Email'}))
