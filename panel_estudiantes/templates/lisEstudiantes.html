@@ -1,0 +1,30 @@
+{% extends 'layouts/base_estudiantes.html' %}
+
+{% block content_RegisterEstudente %}
+
+
+
+<title>{{title_Alumnos}}</title>
+
+<h1>ALUMNOS</h1>
+<a href="{% url 'MatricularAlumno' %}">Matricular</a>
+
+
+
+{% for grado, estudiantes in estudiantes_por_grado.items %}
+<h2>{{ grado|title }}</h2>
+<ul>
+    {% for estudiante in estudiantes %}
+        <li>{{ estudiante.name }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+
+
+
+
+
+
+
+{% endblock %}

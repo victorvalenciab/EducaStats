@@ -1,0 +1,29 @@
+{% extends 'layouts/base_estudiantes.html' %}
+
+{% block content_RegisterEstudente %}
+
+<title>{{title_Matricula}}</title>
+
+
+<div class="wrapper">
+    <div class="segudno">
+        <h1>{{h1}}</h1>
+        <form action="" method="POST"> {% csrf_token %}
+            
+            <div class="input-box">
+                {{ form_matricula.as_p }}
+                {{ form_matricula.errors }}
+            </div>
+            <button type="submit" class="btn">Guardar</button>
+        </form>
+        
+        <button>
+            <a href="{% url 'ListadoDeAlumnos' %}">Terminar</a>
+        </button>
+    </div>
+</div>
+
+<br>
+
+
+{% endblock %}
