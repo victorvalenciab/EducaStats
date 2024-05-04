@@ -10,8 +10,13 @@ h1 = 'EduaStats'
 texto = 'Matricula un nuevo alumno'
 
 def ListadoDeAlumnos(request):
+    estudiantes_por_grado = {}
+    for choice in RegisterEstudent.GRADO_CHOICES:
+        if choice[0] != '':
+            estudiantes_por_grado[choice[1]] = RegisterEstudent.objects.filter(GradoAcademico=choice[0])    
     return render(request, 'lisEstudiantes.html',{
-        'title_Alumnos': title_Listado
+        'title_Alumnos': title_Listado,
+        'estudiantes_por_grado': estudiantes_por_grado
     })
 
 def MatricularAlumno(request):
@@ -50,7 +55,7 @@ def MatricularAlumno(request):
 
 def lista_estudiantes(request):
     estudiantes_por_grado = {}
-    for choice in RegisterEstudent.GRADE_CHOICES:
-        estudiantes_por_grado[choice[0]] = RegisterEstudent.objects.filter(grade=choice[0])
-    
+    for choice in RegisterEstudent.GRADO_CHOICES:
+        estudiantes_por_grado[choice[0]] = RegisterEstudent.objects.filter(GradoAcademico=1)
+    print(estudiantes_por_grado)
     return render(request, 'lisEstudiantes.html', {'estudiantes_por_grado': estudiantes_por_grado})

@@ -2,24 +2,57 @@
 
 {% block content_RegisterEstudente %}
 
-
+{% load static %}
 
 <title>{{title_Alumnos}}</title>
+<link rel="stylesheet" href="{% static 'styles/styleListado.css' %}">
 
 <h1>ALUMNOS</h1>
 <a href="{% url 'MatricularAlumno' %}">Matricular</a>
 
 
+{% for grado, alumnos in estudiantes_por_grado.items %}
 
-{% for grado, estudiantes in estudiantes_por_grado.items %}
-<h2>{{ grado|title }}</h2>
-<ul>
-    {% for estudiante in estudiantes %}
-        <li>{{ estudiante.name }}</li>
-    {% endfor %}
-</ul>
+
+        <h2>{{ grado }}</h1>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Sexo</th>
+                    <th>Fecha nacimiento</th>
+                    <th>Edad</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>      
+            
+            <tbody> 
+                {% for alumno in alumnos %}
+                <tr>
+                    <td>{{ alumno.Id }}</td>   
+                    <td>                     
+                        {{ alumno.SegundoNombre }}
+                        {{ alumno.PrimerNombre }} 
+                    </td>                
+                    <td>
+                        {{ alumno.SegudnoApellido }}
+                        {{ alumno.PrimerApellido }}
+                    </td>                  
+                    <td>{{ alumno.Sexo }}</td>              
+                    <td>{{ alumno.FechaNacimiento }}</td>                          
+                    <td>{{ alumno.Edad }}</td>               
+                    <td>{{ alumno.Direccion }}</td>                  
+                    <td>{{ alumno.Telefono }}</td>
+                    <td>{{ alumno.Correo }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
 {% endfor %}
-
 
 
 

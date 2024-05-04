@@ -1,11 +1,14 @@
 from django.db import models
 
 # Create your models here.
-SEXO_CHOICES = (
+
+
+class RegisterEstudent(models.Model):
+    SEXO_CHOICES = (
         ('M', 'Masculino'),
         ('F', 'Femenino'),
     )
-GRADO_CHOICES = (
+    GRADO_CHOICES = (
     ('','Seleccionar'),
     (0, 'Prescolar'),
     (1, 'Primero'),
@@ -15,13 +18,11 @@ GRADO_CHOICES = (
     (5, "Quinto"),
     (6, "Sexto"),
     (7, "Septimo"),
-    (7, "Octavo"),
+    (8, "Octavo"),
     (9, "Noveno"),
     (10, "Decimo"),
     (11, "Onceavo"),
-)
-
-class RegisterEstudent(models.Model):
+    )
     Id = models.IntegerField(primary_key=True)
     PrimerNombre = models.CharField(max_length=200)
     SegundoNombre = models.CharField(max_length=200)
