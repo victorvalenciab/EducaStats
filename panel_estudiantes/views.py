@@ -6,8 +6,7 @@ from .models import RegisterEstudent
 # Create your views here.
 title_Matricula = 'Matricula'
 title_Listado = 'Alumnos'
-h1 = 'EduaStats'
-texto = 'Matricula un nuevo alumno'
+h = 'EduaStats'
 
 def ListadoDeAlumnos(request):
     estudiantes_por_grado = {}
@@ -45,17 +44,9 @@ def MatricularAlumno(request):
             return redirect('MatricularAlumno')
     else:
         form = Matricular()
-    return render(request, 'newestudiante.html',{
+    return render(request, 'matricula.html',{
         'title_Matricula': title_Matricula,
-        'h1': h1,
-        'texto': texto,
+        'h': h,
         'form_matricula': form,
         'alumnos': alumnos
     })
-
-def lista_estudiantes(request):
-    estudiantes_por_grado = {}
-    for choice in RegisterEstudent.GRADO_CHOICES:
-        estudiantes_por_grado[choice[0]] = RegisterEstudent.objects.filter(GradoAcademico=1)
-    print(estudiantes_por_grado)
-    return render(request, 'lisEstudiantes.html', {'estudiantes_por_grado': estudiantes_por_grado})

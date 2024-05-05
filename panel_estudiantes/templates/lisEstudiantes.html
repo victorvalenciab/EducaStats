@@ -5,15 +5,18 @@
 {% load static %}
 
 <title>{{title_Alumnos}}</title>
-<link rel="stylesheet" href="{% static 'styles/styleListado.css' %}">
 
 <h1>ALUMNOS</h1>
+<button class="btn">
 <a href="{% url 'MatricularAlumno' %}">Matricular</a>
+</button>
+<form action="">
+    <input type="text" name="buscar" placeholder="Buscar" required>
+    <button class="btn">Buscar</button>
+</form>
 
 
 {% for grado, alumnos in estudiantes_por_grado.items %}
-
-
         <h2>{{ grado }}</h1>
         <table class="content-table">
             <thead>
