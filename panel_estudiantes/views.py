@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import Matricular
 from .models import RegisterEstudent
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 title_Matricula = 'Matricula'
 title_Listado = 'Alumnos'
 h = 'EduaStats'
-
+@login_required
 def ListadoDeAlumnos(request):
     estudiantes_por_grado = {}
     for choice in RegisterEstudent.GRADO_CHOICES:
@@ -37,7 +38,9 @@ def MatricularAlumno(request):
                 Direccion=datos_formulario['Direccion'],
                 Telefono=datos_formulario['Telefono'],
                 Correo=datos_formulario['Correo'],
-                GradoAcademico=datos_formulario['GradoAcademico']
+                GradoAcademico=datos_formulario['GradoAcademico'],
+                Contraseña=datos_formulario['Contraseña'],
+                rol=datos_formulario['rol']
             )
             nuevo_estudiante.save()
             # Redirigir a una página de éxito o a donde desees

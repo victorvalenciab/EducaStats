@@ -1,5 +1,5 @@
 from django import forms
-from .models import Register
+# from .models import Register
 
 OPCIONES_REGISTR = [
     ("administrador", "Administrador"),
@@ -13,7 +13,7 @@ class _AdminForm(forms.Form):
     Password = forms.CharField(max_length=50, widget=forms.PasswordInput)
     
 class _Login(forms.Form):
-    Username_Login = forms.CharField(label="Usuario", max_length=20, widget=forms.TextInput(attrs={'class':'forms_Usuario'}))
+    Gmail_Login = forms.EmailField(label="Correo electrónico", max_length=50, widget=forms.EmailInput(attrs={'class':'forms_Email'}))
     Password_Login = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput(attrs={'class':'forms_Password'}))
     
 class _Register(forms.Form):

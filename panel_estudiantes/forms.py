@@ -1,5 +1,7 @@
 from django import forms
-from.models import RegisterEstudent
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+ 
 
 OPCIONES_SEXO = [
     ("","Seleccionar"),
@@ -21,8 +23,13 @@ OPCIONES_GRADO = [
     (10, "Decimo"),
     (11, "Onceavo"),
 ]
-
-class Matricular(forms.Form):
+USUARIO_ROLES = (
+    ('','Seleccionar'),
+        ('Rector', 'Rector'),
+        ('Docente', 'Docente'),
+        ('Estudiante', 'Estudiante'),
+    )
+class Matricular(forms.ModelForm):
     Id = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'forms_Id'}), required=True)
     PrimerNombre = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class':'forms_PriemrNombre'}), required=True)
     SegundoNombre = forms.CharField(max_length=200)
@@ -35,3 +42,16 @@ class Matricular(forms.Form):
     Telefono = forms.IntegerField(required=True)
     Correo = forms.EmailField(required=True)
     GradoAcademico = forms.ChoiceField(choices=OPCIONES_GRADO, widget=forms.Select(attrs={'class':'forms_GradoAcademico'}), required=True)
+    Contraseña = forms.CharField(max_length=200, widget=forms.PasswordInput(attrs={'class':'forms_Contraseña'}), required=True)
+    rol = forms.ChoiceField(choices=USUARIO_ROLES, required=True)
+
+    class Meta:
+        model = User
+        fields = ['Correo', 'Contraseña', 'rol']  # Asume que 'username' es el campo de 'Usuario'
+
+    def save(self, commit=True):
+        user = super(Matricular, self).save(commit=False)
+        user.set_password(self.cleaned_data['Contraseña'])
+        if commit:
+            user.save()
+        return user

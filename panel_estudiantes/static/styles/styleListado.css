@@ -18,7 +18,9 @@ body{
     /* background: var(--Background);
     color: var(--Color_text); */
 }
-
+h2 {
+    cursor: pointer;
+}
 .content-table {
     border-collapse: collapse;
     margin: 10px 0;
@@ -27,7 +29,26 @@ body{
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+    display: none;
+    transition: display 0.5s ease-in-out; /* Define la transición para la propiedad display */
+
 }
+
+/* Agrega una animación para cuando la tabla se muestra */
+.content-table[style="display: block;"] {
+    animation: fadeIn 0.5s;
+}
+
+/* Define la animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .content-table thead tr {
     background-color: #009879;
     color: #FFFFFF;
@@ -48,4 +69,13 @@ body{
 .content-table tbody tr:active-row {
     font-weight: bold;
     color: #009879;
+}
+
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top:20px;
+    display: none;
 }

@@ -1,38 +1,51 @@
 from django.shortcuts import render, redirect
-from .forms import _Login, _Register, _RestorePassword, _PasswordChanged
+from .forms import _Login, _RestorePassword, _PasswordChanged
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .models import Usuarios
+
 
 
 # Create your views here.
+# def login_view(request):
+#     if request.method == 'POST':
+#         email = request.POST['email']
+#         password = request.POST['password']
+#         user = authenticate(request, username=email, password=password)
 
-title = 'EducaStats'
+#         if user is not None:
+#             login(request, user)
+#             # Redirige a una página de éxito.
+#             return redirect('nombre_de_tu_pagina_de_exito')# Redirige a la vista de my_app.html
+#         else:
+#             # Devuelve un mensaje de error 'invalid login'.
+#             return render(request, 'login.html', {'error': 'Correo electrónico o contraseña inválidos.'})
+#     else:
+#         return render(request, 'login.html')
+
 @login_required
 def Login(request):
-    title_login = 'Inicair sesión'
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        print(user)
+    title = 'EducaStats'
+    title_login = 'Iniciar sesión'
+    form_login = _Login(request.POST or None)
+
+    if form_login.is_valid():
+        email = form_login.cleaned_data.get('Gmail_Login')
+        password = form_login.cleaned_data.get('Password_Login')
+        user = authenticate(request, username=email, password=password)
+
         if user is not None:
             login(request, user)
-            return redirect('my_app_view')  # Redirige a la vista de my_app.html
+            # Redirige a la página 'lisEstudiantes' en la aplicación 'panale_estudiantes'.
+            return redirect('panale_estudiantes:lisEstudiantes')
         else:
-            # Manejar el error de autenticación
-            return render(request, 'login.html', {
-                'error': 'Credenciales inválidas',
-                'title': title,
-                'title_login': title_login,
-                'form_login': _Login                
-                })
-    else:
-        return render(request, 'login.html',{
-            'title': title,
-            'title_login': title_login,
-            'form_login': _Login
-        })
+            # Devuelve un mensaje de error 'invalid login'.
+            form_login.add_error(None, 'Correo electrónico o contraseña inválidos.')
+
+    return render(request, 'login.html', {
+        'title': title,
+        'title_login': title_login,
+        'form_login': form_login
+    })
  
     
     

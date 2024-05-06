@@ -7,10 +7,10 @@
     <title>{{title}}</title>
     <!-- Este es un comentario en HTML. -->
     <link rel="stylesheet" href="{% static 'style/index.css' %}">
+    <script src="{% static 'lib/eventos.js' %}"></script>
     <link rel="shortcut icon" href="/static/assets/favicon.png">
 </head>
 <body>
-    <script type="text/javascript" src="../static/js/pagina.js"></script>
 
     <header>
         <div class="LogoHeader">
@@ -25,9 +25,10 @@
             <a href="#que-ofrecemos">¿Qué ofrecemos?</a></li>
             <a href="#que-somos">¿Qué somos?</a></li>
 
-             <button class="btnLogin-popup" id="Login">   
-               <a href="{% url 'login' %}">Iniciar sesion</a>  
-            </button> 
+            <button href="" onclick="click" class="btnLogin-popup" id="Login">
+                <a href="{% url 'login' %}">Iniciar sesion</a>
+            </button>  
+            
         </nav>   
 
     </header>

@@ -83,10 +83,10 @@ header {
     background: var(--Background_header);
     color: var(--Text_color_links);
 }
-.btnLogin-popup a {
+.btnLogin-popup p{
     right: 20px;
-    font-size: 15px;
-
+    font-size: 20px;
+    
 }
 
 .LogoHeader {

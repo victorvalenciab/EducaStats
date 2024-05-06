@@ -5,6 +5,7 @@
 {% load static %}
 
 <title>{{title_Alumnos}}</title>
+<script type="text/javascript" src="{% static 'lib/funciones.js'%}"></script>
 
 <h1>ALUMNOS</h1>
 <button class="btn">
@@ -17,49 +18,60 @@
 
 
 {% for grado, alumnos in estudiantes_por_grado.items %}
-        <h2>{{ grado }}</h1>
-        <table class="content-table">
-            <thead>
-                <tr>
-                    <th>Documento</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Sexo</th>
-                    <th>Fecha nacimiento</th>
-                    <th>Edad</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th>Correo</th>
-                </tr>
-            </thead>      
-            
-            <tbody> 
-                {% for alumno in alumnos %}
-                <tr>
-                    <td>{{ alumno.Id }}</td>   
-                    <td>                     
-                        {{ alumno.SegundoNombre }}
-                        {{ alumno.PrimerNombre }} 
-                    </td>                
-                    <td>
-                        {{ alumno.SegudnoApellido }}
-                        {{ alumno.PrimerApellido }}
-                    </td>                  
-                    <td>{{ alumno.Sexo }}</td>              
-                    <td>{{ alumno.FechaNacimiento }}</td>                          
-                    <td>{{ alumno.Edad }}</td>               
-                    <td>{{ alumno.Direccion }}</td>                  
-                    <td>{{ alumno.Telefono }}</td>
-                    <td>{{ alumno.Correo }}</td>
-                </tr>
-            </tbody>
-            {% endfor %}
-        </table>
+    <div class="grado-container">
+        <h2 onclick="toggleTable('{{ grado }}')">{{ grado }}</h2>
+        <table id="{{ grado }}" class="content-table">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Sexo</th>
+                        <th>Fecha nacimiento</th>
+                        <th>Edad</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>      
+                
+                <tbody> 
+                    {% for alumno in alumnos %}
+                    <tr>
+                        <td>{{ alumno.Id }}</td>   
+                        <td>                     
+                            {{ alumno.SegundoNombre }}
+                            {{ alumno.PrimerNombre }} 
+                        </td>                
+                        <td>
+                            {{ alumno.SegudnoApellido }}
+                            {{ alumno.PrimerApellido }}
+                        </td>                  
+                        <td>{{ alumno.Sexo }}</td>              
+                        <td>{{ alumno.FechaNacimiento }}</td>                          
+                        <td>{{ alumno.Edad }}</td>               
+                        <td>{{ alumno.Direccion }}</td>                  
+                        <td>{{ alumno.Telefono }}</td>
+                        <td>{{ alumno.Correo }}</td>
+                        <td>{{alumno.rol}}</td>
+                        <td>{{alumno.Contraseña}}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+    </div>
+        
 {% endfor %}
 
 
 
+<button onclick="myFunction()">Try it</button>
 
+<div id="myDIV">
+This is my DIV element.
+</div>
 
 
 

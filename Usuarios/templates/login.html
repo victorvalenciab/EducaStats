@@ -18,11 +18,11 @@
         {% if error %}
         <p>{{ error }}</p>
         {% endif %}
-        <form class="forms" action="{% url 'login' %}" method="POST"> {% csrf_token %}
+        <form class="forms" action="{% url 'my_app' %}" method="POST"> {% csrf_token %}
             <div class="input-box">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input type="text" name="username" id="" required>
-                <label for="username">Usuario</label>     
+                <input type="gmail" name="gmail" id="" required>
+                <label for="gmail">Gmail</label>     
             </div>
             <!-- <div class="input-box">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>

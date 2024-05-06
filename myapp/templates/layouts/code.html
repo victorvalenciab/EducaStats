@@ -9,7 +9,7 @@
     <nav>
         <ul>
             <li>
-                <a href="">Inicio</a>
+                <a href="{% url 'my_app' %}">Inicio</a>
             </li>
             <li>
                 <a href="{% url 'panel_administrador' %}">Panel administrador</a>
@@ -18,7 +18,7 @@
                 <a href="">Profesores</a>
             </li>
             <li>
-                <a href="">Estudiantes</a>
+                <a href="{% url 'ListadoDeAlumnos' %}">Estudiantes</a>
             </li>
         </ul>
         <a href="">Cerrar sesion</a>

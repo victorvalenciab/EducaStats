@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -9,20 +10,27 @@ class RegisterEstudent(models.Model):
         ('F', 'Femenino'),
     )
     GRADO_CHOICES = (
-    ('','Seleccionar'),
-    (0, 'Prescolar'),
-    (1, 'Primero'),
-    (2, 'Segundo'),
-    (3, "Tercero"),
-    (4, "Cuarto"),
-    (5, "Quinto"),
-    (6, "Sexto"),
-    (7, "Septimo"),
-    (8, "Octavo"),
-    (9, "Noveno"),
-    (10, "Decimo"),
-    (11, "Onceavo"),
+        ('','Seleccionar'),
+        (0, 'Prescolar'),
+        (1, 'Primero'),
+        (2, 'Segundo'),
+        (3, "Tercero"),
+        (4, "Cuarto"),
+        (5, "Quinto"),
+        (6, "Sexto"),
+        (7, "Septimo"),
+        (8, "Octavo"),
+        (9, "Noveno"),
+        (10, "Decimo"),
+        (11, "Onceavo"),
     )
+    USUARIO_ROLES = (
+        ('','Seleccionar'),
+        ('Rector', 'Rector'),
+        ('Docente', 'Docente'),
+        ('Estudiante', 'Estudiante'),
+    )
+
     Id = models.IntegerField(primary_key=True)
     PrimerNombre = models.CharField(max_length=200)
     SegundoNombre = models.CharField(max_length=200)
@@ -35,6 +43,8 @@ class RegisterEstudent(models.Model):
     Telefono = models.IntegerField()
     Correo = models.EmailField()
     GradoAcademico = models.IntegerField(choices=GRADO_CHOICES)
+    Contraseña = models.CharField(max_length=200)
+    rol = models.CharField(max_length=20, choices=USUARIO_ROLES)
 
     def __str__(self):
-        return self. PrimerNombre
+        return self.PrimerNombre
