@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="{% static '/assets/favicon.png' %}">
 </head>
 <body>
     <nav>
@@ -21,7 +22,7 @@
                 <a href="{% url 'ListadoDeAlumnos' %}">Estudiantes</a>
             </li>
         </ul>
-        <a href="">Cerrar sesion</a>
+        <a href="{% url 'index' %}">Cerrar sesion</a>
     </nav>
 </body>
 </html>

@@ -1,8 +1,20 @@
-{% extends 'layouts/code.html' %}
+{% extends 'layouts/codemyapp.html' %}
+
 {% load static %}
 
-
 {% block content %}
-<h1>HOLAS</h1>
+
+<title>{{title}}</title>
+<link rel="stylesheet" href="{% static 'styles/cards.css' %}">
+
+<h1>{{h1}}</h1>
+<p>holas</p>
+<div class="contend-cards profesores">
+ <p>g</p>
+</div>
+<div class="contend-cards alumnos"></div>
+<div class="contend-cards graficas"></div>
+<div class="contend-cards notas"></div>
+<div class="contend-cards actividades"></div>
 
 {% endblock %}
