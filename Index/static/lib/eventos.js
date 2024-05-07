@@ -1,9 +1,7 @@
-let BotonLogin = document.getElementById('Login');
 
-function Click()
+function Click(url)
 {
-    BotonLogin.addEventListener("click", ()=>
-        {
-            window.location.href = 'EducaStats/Usuarios/login.html';
-        });
+
+    window.location.href = url;
+        
 }
