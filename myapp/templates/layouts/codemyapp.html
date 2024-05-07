@@ -9,11 +9,12 @@
 <body>
     <nav>
         <ul>
+            <a href="{% url 'index' %}">Cerrar sesion</a>
             <li>
                 <a href="{% url 'my_app' %}">Inicio</a>
             </li>
             <li>
-                <a href="{% url 'panel_administrador' %}">Panel administrador</a>
+                <a href="{% url 'panel_administrador' %}">Administrador</a>
             </li>
             <li>
                 <a href="">Profesores</a>
@@ -22,7 +23,7 @@
                 <a href="{% url 'ListadoDeAlumnos' %}">Estudiantes</a>
             </li>
         </ul>
-        <a href="{% url 'index' %}">Cerrar sesion</a>
+        
     </nav>
 </body>
 </html>

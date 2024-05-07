@@ -1,6 +1,8 @@
-body {
-    background: #252440;
+
+.contend {
+    border: 2px solid black;
 }
 .contend-cards {
-    border: 2px solid black;
+    
+    cursor: pointer;
 }

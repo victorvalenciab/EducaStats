@@ -1,20 +1,102 @@
-{% extends 'layouts/codemyapp.html' %}
-
-{% load static %}
-
-{% block content %}
+{% extends 'layouts/codemyapp.html' %} {% load static %} {% block content %}
 
 <title>{{title}}</title>
-<link rel="stylesheet" href="{% static 'styles/cards.css' %}">
+<link rel="stylesheet" href="{% static 'styles/cards.css' %}" />
+<script src="{% static 'lib/funciones_card.js' %}"></script>
 
 <h1>{{h1}}</h1>
-<p>holas</p>
-<div class="contend-cards profesores">
- <p>g</p>
+<div class="contend Profesores">
+  <h2>PROFESORES</h2>
+  <div class="contend-cards Profesores">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/school-tie-stroke-rounded.svg"
+        alt="school-tie"
+        width="48"
+        height="48"
+    /></span>
+    <p>Profesores</p>
+  </div>
+  <div class="contend-cards AñadirProfesores">
+    <span
+      ><img
+        <img
+        src="https://cdn.hugeicons.com/icons/add-team-stroke-rounded.svg"
+        alt="add-team"
+        width="48"
+        height="48"
+      /></span
+    >
+    <p>Añadir profesor</p>
+  </div>
 </div>
-<div class="contend-cards alumnos"></div>
-<div class="contend-cards graficas"></div>
-<div class="contend-cards notas"></div>
-<div class="contend-cards actividades"></div>
+
+<div class="contend alumnos">
+    <h2>ALUMNOS</h2>
+  <div class="contend-cards alumnos" onclick="Click(`{% url 'ListadoDeAlumnos' %}`)">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/backpack-01-stroke-rounded.svg"
+        alt="backpack-01"
+        width="48"
+        height="48"
+    /></span>
+    <p>Alumnos</p>
+  </div>
+  <div class="contend-cards AñadirAlumno" onclick="Click(`{% url 'MatricularAlumno' %}`)">
+    <span
+      ><img
+        <img
+        src="https://cdn.hugeicons.com/icons/add-team-stroke-rounded.svg"
+        alt="add-team"
+        width="48"
+        height="48"
+      /></span
+    >
+    <p>Matricular</p>
+  </div>
+</div>
+
+<div class="contend graficas">
+    <h2>GRAFICAS</h2>
+  <div class="contend-cards graficas">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/chart-histogram-stroke-rounded.svg"
+        alt="chart-histogram"
+        width="48"
+        height="48"
+    /></span>
+    <p>Graficas</p>
+  </div>
+</div>
+
+<div class="contend notas">
+    <h2>NOTAS</h2>
+  <div class="contend-cards notas">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/note-add-stroke-rounded.svg"
+        alt="note-add"
+        width="48"
+        height="48"
+    /></span>
+    <p>Notas</p>
+  </div>
+</div>
+
+<div class="contend actividades">
+    <h2>ACTIVIDADES</h2>
+  <div class="contend-cards actividades">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/book-upload-stroke-rounded.svg"
+        alt="book-upload"
+        width="48"
+        height="48"
+    /></span>
+  </div>
+  <p>Actividades</p>
+</div>
 
 {% endblock %}
