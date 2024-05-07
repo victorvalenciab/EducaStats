@@ -5,7 +5,7 @@
 {% load static %}
 
 <title>{{title_Alumnos}}</title>
-<script type="text/javascript" src="{% static 'lib/funciones.js'%}"></script>
+<script src="{% static 'lib/tables.js' %}"></script>
 
 <h1>ALUMNOS</h1>
 <button class="btn">
@@ -20,7 +20,7 @@
 {% for grado, alumnos in estudiantes_por_grado.items %}
     <div class="grado-container">
         <h2 onclick="toggleTable('{{ grado }}')">{{ grado }}</h2>
-        <table id="{{ grado }}" class="content-table">
+        <table id="{{ grado }}" class="content-table" style="display: none;">
                 <thead>
                     <tr>
                         <th>Documento</th>
@@ -64,14 +64,6 @@
     </div>
         
 {% endfor %}
-
-
-
-<button onclick="myFunction()">Try it</button>
-
-<div id="myDIV">
-This is my DIV element.
-</div>
 
 
 
