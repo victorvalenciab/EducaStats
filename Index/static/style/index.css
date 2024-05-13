@@ -85,8 +85,8 @@ header {
 }
 .btnLogin-popup p{
     right: 20px;
-    font-size: 20px;
-    
+    font-size: 15px;
+    color: var(--Text_color);
 }
 
 .LogoHeader {

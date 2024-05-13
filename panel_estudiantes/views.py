@@ -8,6 +8,14 @@ from django.contrib.auth.decorators import login_required
 title_Matricula = 'Matricula'
 title_Listado = 'Alumnos'
 h = 'EduaStats'
+
+def pl_alumnos(request):
+    return render(request, 'pl_alumnos.html',{
+        'title_Matricula': title_Matricula,
+        'title_Listado': title_Listado,
+        'h': h
+    })
+
 @login_required
 def ListadoDeAlumnos(request):
     estudiantes_por_grado = {}
