@@ -1,10 +1,31 @@
 {% extends 'layouts/codemyapp.html' %} {% load static %} {% block content %}
 
-<script src="{% static 'lib/Events.js' %}"></script>
+<title>{{title}}</title>
+<script src="{% static 'lib/funciones_card.js' %}"></script>
 
-
-<div class="contend alumnos">
-    <h2>ALUMNOS</h2>
+<h1>{{h1}}</h1>
+<div class="contend Profesores">
+  <h2>PROFESORES</h2>
+  <div class="contend-cards alumnos" onclick="Click(`{% url 'ListadoDeAlumnos' %}`)">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/backpack-01-stroke-rounded.svg"
+        alt="backpack-01"
+        width="48"
+        height="48"
+    /></span>
+    <p>Alumnos</p>
+  </div>
+  <div class="contend-cards notas" onclick="Click(`{% url 'notas' %}`)">
+    <span
+      ><img
+        src="https://cdn.hugeicons.com/icons/note-add-stroke-rounded.svg"
+        alt="note-add"
+        width="48"
+        height="48"
+    /></span>
+    <p>Notas</p>
+  </div>
   <div class="contend-cards actividades">
     <span
       ><img
@@ -15,17 +36,8 @@
     /></span>
   </div>
   <p>Actividades</p>
-  <div class="contend-cards notas">
-    <span
-      ><img
-        src="https://cdn.hugeicons.com/icons/note-add-stroke-rounded.svg"
-        alt="note-add"
-        width="48"
-        height="48"
-    /></span>
-    <p>Notas</p>
-  </div>
 </div>
+
 
 <div class="contend graficas">
     <h2>GRAFICAS</h2>
@@ -40,4 +52,6 @@
     <p>Graficas</p>
   </div>
 </div>
+
+
 {% endblock %}

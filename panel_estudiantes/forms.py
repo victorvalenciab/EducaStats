@@ -1,4 +1,5 @@
 from django import forms
+from .models import RegisterEstudent
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
  
@@ -55,3 +56,21 @@ class Matricular(forms.ModelForm):
         if commit:
             user.save()
         return user
+    
+class Buscar(forms.Form):
+    OPCIONES_GRADO = [
+    ('','Seleccionar'),
+    (0, 'Prescolar'),
+    (1, 'Primero'),
+    (2, 'Segundo'),
+    (3, "Tercero"),
+    (4, "Cuarto"),
+    (5, "Quinto"),
+    (6, "Sexto"),
+    (7, "Septimo"),
+    (7, "Octavo"),
+    (9, "Noveno"),
+    (10, "Decimo"),
+    (11, "Onceavo"),
+    ]
+    Buscar = forms.ChoiceField(choices=OPCIONES_GRADO)

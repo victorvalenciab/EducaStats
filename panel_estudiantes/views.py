@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import Matricular
+from .forms import Matricular, Buscar
 from .models import RegisterEstudent
 from django.contrib.auth.decorators import login_required
 
@@ -7,10 +7,11 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 title_Matricula = 'Matricula'
 title_Listado = 'Alumnos'
+title_Notas = 'Notas'
 h = 'EduaStats'
 
 def pl_alumnos(request):
-    return render(request, 'pl_alumnos.html',{
+    return render(request, 'pl_estudiantes.html',{
         'title_Matricula': title_Matricula,
         'title_Listado': title_Listado,
         'h': h
@@ -60,4 +61,10 @@ def MatricularAlumno(request):
         'h': h,
         'form_matricula': form,
         'alumnos': alumnos
+    })
+
+def NOTAS(request):
+    return render(request, 'notas.html',{
+        'title_Notas': title_Notas,
+        'h': h,
     })

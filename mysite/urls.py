@@ -24,4 +24,5 @@ urlpatterns = [
     path('myapp/', include('myapp.urls')),
     path('panel_administrador/', include('panel_administrador.urls')),
     path('panel_estudiantes/', include('panel_estudiantes.urls')),
+    path('panel_docentes/', include('panel_docentes.urls')),
 ]

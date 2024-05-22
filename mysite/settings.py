@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'Usuarios',
     'myapp',
     'panel_administrador',
-    'panel_estudiantes'
+    'panel_estudiantes',
+    'panel_docentes',
 ]
 
 MIDDLEWARE = [
