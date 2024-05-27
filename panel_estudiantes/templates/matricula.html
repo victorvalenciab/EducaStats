@@ -8,17 +8,16 @@
 <link rel="stylesheet" href="{% static 'styles/estudiantes_matricula.css' %}">
 
 <div class="container">
+
+    
     <h1>{{title_Matricula}}</h1>
     <h3>Ingresa los datos del nuevo alumno</h3>
+    <a href="{% url 'my_app' %}"class="icon-close"><ion-icon name="close"></ion-icon></a>
     <div class="user-details">
         <form action="" method="POST"> {% csrf_token %}
             
             <div class="input-group">
-                <div class="input-box Rol">
-                    <p>Rol:</p>
-                    {{form_matricula.rol}}
-                    {{ form_matricula.rol.errors }} 
-                </div>
+                
                 <div class="input-box Id">
                     {{form_matricula.Id}}
                     {{ form_matricula.Id.errors }} 
@@ -43,6 +42,11 @@
                     {{form_matricula.SegudnoApellido}}
                     {{ form_matricula.SegudnoApellido.errors }} 
                      <label class="label">Segudno Apellido</label>
+                </div>
+                <div class="input-box Rol">
+                    <p>Rol:</p>
+                    {{form_matricula.rol}}
+                    {{ form_matricula.rol.errors }} 
                 </div>
                 <div class="input-box Sexo">
                     <p>Sexo:</p>
@@ -90,9 +94,7 @@
             <button type="submit" class="btn-guardar">Guardar</button>
         </form>
         
-        <button class="btn-regresar">
-            <a href="{% url 'my_app' %}">Terminar</a>
-        </button>
+        
     </div>
 </div>
 
