@@ -8,90 +8,89 @@
 <link rel="stylesheet" href="{% static 'styles/estudiantes_matricula.css' %}">
 
 <div class="container">
+    <h1>{{title_Matricula}}</h1>
+    <h3>Ingresa los datos del nuevo alumno</h3>
     <div class="user-details">
-        <h1>{{title_Matricula}}</h1>
-        <p>Ingresa los datos del nuevo alumno</p>
         <form action="" method="POST"> {% csrf_token %}
             
             <div class="input-group">
-                <!-- {{ form_matricula.as_p }}-->
-                <div class="input-box">
+                <div class="input-box Rol">
                     <p>Rol:</p>
                     {{form_matricula.rol}}
                     {{ form_matricula.rol.errors }} 
                 </div>
-                <div class="input-box">
+                <div class="input-box Id">
                     {{form_matricula.Id}}
-                     {{ form_matricula.Id.errors }} 
-                     <label class="label">ID</label>
+                    {{ form_matricula.Id.errors }} 
+                    <label class="label">ID</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Pn">
                     {{form_matricula.PrimerNombre}}
                     {{ form_matricula.PrimerNombre.errors }} 
                      <label class="label">Primer Nombre</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Sn">
                     {{form_matricula.SegundoNombre}}
                     {{ form_matricula.SegundoNombre.errors }} 
                      <label class="label">Segundo Nombre</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Pa">
                     {{form_matricula.PrimerApellido}}
                     {{ form_matricula.PrimerApellido.errors }} 
                      <label class="label">Primer Apellido</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Sa">
                     {{form_matricula.SegudnoApellido}}
                     {{ form_matricula.SegudnoApellido.errors }} 
                      <label class="label">Segudno Apellido</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Sexo">
                     <p>Sexo:</p>
                     {{form_matricula.Sexo}}
                     {{ form_matricula.Sexo.errors }} 
                    
                 </div>
-                <div class="input-box">
+                <div class="input-box Grado">
                     <p>Grado Academico:</p>
                     {{form_matricula.GradoAcademico}}
                     {{ form_matricula.GradoAcademico.errors }} 
                 </div>
-                <div class="input-box">
+                <div class="input-box Fecha">
                     {{form_matricula.FechaNacimiento}}
                     {{ form_matricula.FechaNacimiento.errors }} 
                      <label class="label">Fecha de nacimiento</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Edad">
                     {{form_matricula.Edad}}
                     {{ form_matricula.Edad.errors }} 
                      <label class="label">Edad</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Direccion">
                     {{form_matricula.Direccion}}
                     {{ form_matricula.Direccion.errors }} 
                      <label class="label">Direccion</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Telefono">
                     {{form_matricula.Telefono}}
                     {{ form_matricula.Telefono.errors }} 
                      <label class="label">Telefono</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Correo">
                     {{form_matricula.Correo}}
                     {{ form_matricula.Correo.errors }} 
                      <label class="label">Correo</label>
                 </div>
-                <div class="input-box">
+                <div class="input-box Contraseña">
                     {{form_matricula.Contraseña}}
                     {{ form_matricula.Contraseña.errors }} 
                      <label class="label">Contraseña</label>
                 </div>
                 
             </div>
-            <button type="submit" class="btn">Guardar</button>
+            <button type="submit" class="btn-guardar">Guardar</button>
         </form>
         
-        <button>
+        <button class="btn-regresar">
             <a href="{% url 'my_app' %}">Terminar</a>
         </button>
     </div>
