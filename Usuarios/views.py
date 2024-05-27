@@ -22,9 +22,8 @@ from django.contrib.auth import authenticate, login
 #     else:
 #         return render(request, 'login.html')
 
-@login_required
+title = 'EducaStats'
 def Login(request):
-    title = 'EducaStats'
     title_login = 'Iniciar sesión'
     form_login = _Login(request.POST or None)
 
@@ -49,20 +48,6 @@ def Login(request):
  
     
     
-# def login_view(request):
-#     if request.method == 'POST':
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect('my_app.html')  # Redirige a la vista de my_app.html
-#         else:
-#             # Manejar el error de autenticación
-#             return render(request, 'login.html', {'error': 'Credenciales inválidas'})
-#     else:
-#         return render(request, 'login.html')
-    
 def Users(request):
    Username = request.POST['Username']
    Password = request.POST['Username']
@@ -70,50 +55,6 @@ def Users(request):
    User.save();
    return redirect('my_app')
 
-# @transaction.atomic
-# def Register(request): 
-#     title_crear = 'Crear cuenta'
-#     if request.method == 'POST':
-#         newUSer = _Register(request.POST)
-#         if newUSer.is_valid():
-#             Email = newUSer.cleaned_data['gmail_Register']
-#             Username = newUSer.cleaned_data['Name_Register']
-#             Rol = newUSer.cleaned_data['Rol_Register']
-#             Password = newUSer.cleaned_data['Password_Register']
-#             PasswordChange = newUSer.cleaned_data['Password_RegisterConfirm']
-#             # Realiza aquí tus operaciones de escritura en la base de datos
-#             # Por ejemplo:
-#             nuevo_usuario = _Register(email=Email, username=Username, rol=Rol, password=Password, passwordChange=PasswordChange)
-#             nuevo_usuario.save()
-#             return redirect('login')
-#     else:
-#         newUSer = _Register()
-#     return render(request, 'register.html', {
-#         'newUSer': newUSer,
-#         'title': title,
-#         'title_crear': title_crear,
-#     })
-
-
-# def registerUser(request):
-#     gmail_Register= request.POST['gmail_Register']
-#     Name_Register= request.POST['Name_Register']
-#     Rol_Register= request.POST['Rol_Register']
-#     Password_Register= request.POST['Password_Register']
-#     Password_RegisterConfirm= request.POST['Password_RegisterConfirm']
-
-#     register = _Register(
-#         Email= gmail_Register,
-#         Username= Name_Register,
-#         Rol= Rol_Register,
-#         Password= Password_Register,
-#         PasswordChange= Password_RegisterConfirm
-#     )
-#     register.save()
-#     return redirect('/')
-        
-
-    
 
 def RestorePassword(request):
     title_restore = 'Restablecer contraseña'

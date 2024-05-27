@@ -2,6 +2,7 @@ from django import forms
 from .models import RegisterEstudent
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+
  
 
 OPCIONES_SEXO = [
@@ -31,8 +32,8 @@ USUARIO_ROLES = (
         ('Estudiante', 'Estudiante'),
     )
 class Matricular(forms.ModelForm):
-    Id = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'forms_Id'}), required=True)
-    PrimerNombre = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class':'forms_PriemrNombre'}), required=True)
+    Id = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'forms_Id input'}), required=True)
+    PrimerNombre = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class':'PriemrNombre'}), required=True)
     SegundoNombre = forms.CharField(max_length=200)
     PrimerApellido = forms.CharField(max_length=200, required=True)
     SegudnoApellido = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class':'SegudnoApellido'}),)
@@ -56,6 +57,8 @@ class Matricular(forms.ModelForm):
         if commit:
             user.save()
         return user
+    
+ 
     
 class Buscar(forms.Form):
     OPCIONES_GRADO = [

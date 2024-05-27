@@ -17,7 +17,7 @@ def pl_alumnos(request):
         'h': h
     })
 
-@login_required
+
 def ListadoDeAlumnos(request):
     estudiantes_por_grado = {}
     for choice in RegisterEstudent.GRADO_CHOICES:

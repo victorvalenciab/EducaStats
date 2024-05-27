@@ -39,7 +39,7 @@ header {
     margin-top: var(--header-height); /* Ajusta el margen superior para compensar la altura del header */
 }
 
-/* Asegúrate de agregar estas reglas */
+/* Estilos para el header fijo */
 header.fixed {
     position: fixed;
     top: 0;
@@ -47,10 +47,6 @@ header.fixed {
     width: 100%;
     z-index: 1000; /* Asegura que el header esté por encima de todo */
     transition: top 0.3s; /* Agrega una transición suave para el cambio de posición */
-}
-
-header.fixed.hidden {
-    top: -100%; /* Oculta el header arriba de la pantalla */
 }
 
 .Logo {
